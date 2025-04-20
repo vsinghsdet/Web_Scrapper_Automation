@@ -18,6 +18,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,7 +50,7 @@ public class TestCases {
         Wrappers.selectTableData(driver, teamsWinPct, 4);
 
         //Checking if data is properly retrieved
-        String filePath = "D:\\Projects\\Web_Scrapper_Automation\\app\\hockey-team-data.json";
+        String filePath = System.getProperty("user.dir") + File.separator + "hockey-team-data.json";
         Wrappers.verifyFilePresenceAndContent(filePath);
         System.out.println("Verified Hocket Team data presence");
 
@@ -77,7 +78,7 @@ public class TestCases {
         Wrappers.selectYear(years, driver, 5);
 
         //Checking if data is properly retrieved
-        String filePath = "D:\\Projects\\Web_Scrapper_Automation\\app\\oscar-winner-data.json";
+        String filePath = System.getProperty("user.dir") + File.separator + "oscar-winner-data.json";
         Wrappers.verifyFilePresenceAndContent(filePath);
         System.out.println("Verified Oscar Winner data presence");
 
